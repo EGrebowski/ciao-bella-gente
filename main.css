@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
+body {
+    font-size: 16px;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h4 {}
+
+nav h4,
+nav ul {
+    display: inline-block;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    padding-right: 15px;
+    padding-top: 10px;
+    font-size: 1rem;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
+header {
+    /*
+    background: url("images/aqueduct-banner-small.jpg") no-repeat top center;
+    background-size: cover;
+*/
+    width: 100%;
+    /*    height: 500px;*/
+    margin-top: 70px;
+    position: relative;
+}
+
+header h1 {
+    text-align: center;
+    /*    color: white;*/
+    font-size: 2rem;
+    /*    font-family: 'Libre Franklin', sans-serif;*/
+    position: absolute;
+    /*
+    bottom: 1rem;
+    right: 1rem;
+*/
+}
