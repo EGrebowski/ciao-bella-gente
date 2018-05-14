@@ -138,4 +138,6 @@ img {
     font-size: 1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    position: relative;
+    bottom: 6rem;
 }
