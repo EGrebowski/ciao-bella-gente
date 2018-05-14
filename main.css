@@ -122,3 +122,20 @@ section {
 #italian-lessons {
     background-color: #F4F3F5;
 }
+
+img {
+    width: 100%;
+}
+
+.testimonial-wrapper {
+    background-color: skyblue;
+    color: white;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.testimonial-text p {
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
