@@ -142,12 +142,31 @@ section {
 
 #italian-lessons ul {
     padding-left: 4rem;
+    text-align: left;
 }
 
 img {
     width: 100%;
 }
 
+#testimonials {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#testimonials .testimonial-extended {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+#testimonials .testimonial-extended #Kevin-1 {
+    width: 40%;
+    position: relative;
+    float: left;
+    margin-right: 1rem;
+}
+
+/*
 .testimonial-wrapper {
     background-color: skyblue;
     color: white;
@@ -162,6 +181,7 @@ img {
     position: relative;
     bottom: 6rem;
 }
+*/
 
 #contact {
     background-color: #F4F3F5;
