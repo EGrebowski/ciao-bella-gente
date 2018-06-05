@@ -157,9 +157,18 @@ img {
 #testimonials .testimonial-extended {
     margin-top: 4rem;
     margin-bottom: 2rem;
+    background-color: #FFEDDA;
+    color: #346577;
+    padding: 30px;
 }
 
-#testimonials .testimonial-extended #Kevin-1 {
+#testimonials .testimonial-extended i {
+    display: block;
+    text-align: right;
+    padding-bottom: 1rem;
+}
+
+#testimonials .testimonial-extended img {
     width: 40%;
     position: relative;
     float: left;
