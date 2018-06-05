@@ -195,3 +195,16 @@ img {
 #contact {
     background-color: #F4F3F5;
 }
+
+#contact .contact-info {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact i {
+    /*    display: block;*/
+}
+
+footer {
+    text-align: center;
+}
