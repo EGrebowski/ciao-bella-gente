@@ -37,7 +37,18 @@ $('#nav-contact').on('click', function (event) {
 
 
 // show and hide full testimonials
-$('.story-thumbnail').on('click', 'a', function (event) {
+$(document).ready(function (event) {
+    $(".testimonial-extended").hide();
+});
+
+$('.story-thumbnail').on('click', 'p.read-more', function (event) {
     var testimonialName = $(this).parent().attr('id');
     console.log(testimonialName);
+    var testimonialFull = testimonialName + '-full';
+    console.log(testimonialFull);
+    $('#' + testimonialFull).show();
+})
+
+$('.testimonial-extended').on('click', 'i', function (event) {
+    $(this).parent().hide();
 })
