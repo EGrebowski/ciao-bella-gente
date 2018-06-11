@@ -20,6 +20,11 @@ body {
     font-size: 16px;
 }
 
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
 nav {
     position: fixed;
     width: 100%;
@@ -93,8 +98,8 @@ section {
     padding-top: 6rem;
     padding-bottom: 6rem;
     width: 100%;
-    font-family: 'Alegreya', serif;
-    font-size: 1.1rem;
+    /*    font-family: 'Alegreya', serif;*/
+    /*    font-size: 1.1rem;*/
     text-align: justify;
 }
 
@@ -115,6 +120,8 @@ section {
 .section-title {
     text-align: center;
     font-size: 1.5rem;
+    text-decoration: underline;
+    color: #BD614E;
     padding-bottom: 2rem;
     font-family: 'Roboto', sans-serif;
 }
@@ -143,6 +150,17 @@ section {
 #italian-lessons ul {
     padding-left: 4rem;
     text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+#italian-lessons ul li {
+    margin-bottom: 5px;
+}
+
+#italian-lessons ul li span {
+    color: #63A97D;
+    font-weight: bold;
 }
 
 img {
