@@ -61,6 +61,12 @@ nav li a {
     font-weight: bolder;
 }
 
+nav li a:hover {
+    cursor: pointer;
+    border-bottom: 4px solid #FFDEBB;
+    padding-bottom: 2px;
+}
+
 header {
     background: url("images/leona-7.jpg") no-repeat center left;
     background-size: cover;
@@ -172,6 +178,26 @@ img {
     padding-right: 2rem;
 }
 
+#testimonials p {
+    text-align: left;
+    margin-top: .5rem;
+}
+
+#testimonials .story-thumbnail {
+    margin-bottom: 1rem;
+}
+
+#testimonials p.read-more {
+    /*    margin-top: 1rem;*/
+    font-size: .8rem;
+    text-decoration: underline;
+    color: #63A97D;
+}
+
+#testimonials p.read-more:hover {
+    cursor: pointer;
+}
+
 #testimonials .testimonial-extended {
     margin-top: 4rem;
     margin-bottom: 2rem;
@@ -217,6 +243,10 @@ img {
 #contact .contact-info {
     max-width: 500px;
     margin: 0 auto;
+}
+
+#contact .contact-info p {
+    margin-bottom: .5rem;
 }
 
 #contact i {
