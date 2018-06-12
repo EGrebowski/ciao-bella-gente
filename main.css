@@ -255,4 +255,11 @@ img {
 
 footer {
     text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #FFDEBB;
+}
+
+footer p {
+    font-size: .8rem;
 }
