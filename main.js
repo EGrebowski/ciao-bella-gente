@@ -1,10 +1,12 @@
 // navigation links
 
 // Home
-$('#logo').on('click', function (event) {
+$('#logo, #nav-home').on('click', function (event) {
     $('html, body').animate({
         scrollTop: 0,
     }, 'fast')
+    $('.nav-buttons').removeClass('responsive');
+    $('nav li').removeClass('responsive');
 })
 
 // About Leona
@@ -12,6 +14,8 @@ $('#nav-about').on('click', function (event) {
     $('html, body').animate({
         scrollTop: $("section#about").offset().top
     });
+    $('.nav-buttons').removeClass('responsive');
+    $('nav li').removeClass('responsive');
 })
 
 // Lessons
@@ -19,6 +23,8 @@ $('#nav-lessons').on('click', function (event) {
     $('html, body').animate({
         scrollTop: $("section#italian-lessons").offset().top
     });
+    $('.nav-buttons').removeClass('responsive');
+    $('nav li').removeClass('responsive');
 })
 
 // Testimonials
@@ -26,6 +32,8 @@ $('#nav-testimonials').on('click', function (event) {
     $('html, body').animate({
         scrollTop: $("section#testimonials").offset().top
     });
+    $('.nav-buttons').removeClass('responsive');
+    $('nav li').removeClass('responsive');
 })
 
 // Contact
@@ -33,7 +41,30 @@ $('#nav-contact').on('click', function (event) {
     $('html, body').animate({
         scrollTop: $("section#contact").offset().top
     });
+    $('.nav-buttons').removeClass('responsive');
+    $('nav li').removeClass('responsive');
 })
+
+// links to testimonials in About section
+$('.text-accent').on('click', function (event) {
+    $('html, body').animate({
+        scrollTop: $("section#testimonials").offset().top
+    });
+})
+
+
+// Drop-down menu for responsive navbar
+$('.hamburger').on('click', function (event) {
+    $('.nav-buttons').toggleClass('responsive');
+    $('nav li').toggleClass('responsive');
+})
+
+$(window).resize(function () {
+    if ($(window).width() > 640) {
+        $('.nav-buttons').removeClass('responsive');
+        $('nav li').removeClass('responsive');
+    }
+});
 
 
 // show and hide full testimonials

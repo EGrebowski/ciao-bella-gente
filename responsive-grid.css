@@ -44,17 +44,37 @@
 /*responsive navbar*/
 
 @media only screen and (max-width: 640px) {
-    #logo {
+    nav li {
+        display: none;
+    }
+    nav ul.responsive {
+        float: none;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        text-align: left;
     }
-    nav ul {
-        text-align: center;
+    nav li.responsive {
+        /* float: none; */
+        display: block;
+        text-align: left;
+        border-bottom: 1px dotted #999;
+        padding-top: 10px;
     }
-    .nav-buttons {
-        width: 100%;
-        margin: 0 auto;
+    nav li.responsive.nav-final {
+        border: none;
+    }
+    nav li.responsive a:hover {
+        border: none;
+        color: #8EC0A5;
+    }
+    nav .hamburger {
+        display: block;
+        float: right;
+    }
+    nav .hamburger.active {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        border: none;
     }
 }
 

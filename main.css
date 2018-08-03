@@ -56,26 +56,27 @@ nav h6 {
     display: inline-block;
 }
 
-nav h4 {}
-
 nav h4,
 nav ul {
     display: inline-block;
 }
 
-nav ul {
-    float: right;
+nav ul,
+nav ul.responsive {
     list-style: none;
+    float: right;
 }
 
-nav li {
+nav li,
+nav li.responsive {
     display: inline-block;
-    padding-left: 15px;
-    /* padding-top: 10px; */
-    /* font-size: .9rem; */
+    padding-top: 5px;
+    font-size: .9rem;
 }
 
 nav li a {
+    /* display: inline-block; */
+    margin-left: 15px;
     text-decoration: none;
     color: #3c3c3c;
     font-family: 'Roboto', sans-serif;
@@ -87,6 +88,54 @@ nav li a:hover {
     cursor: pointer;
     border-bottom: 4px solid #8EC0A5;
     padding-bottom: 2px;
+}
+
+nav li a#nav-home {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+}
+
+/*responsive navbar*/
+
+@media only screen and (max-width: 640px) {
+    nav li {
+        display: none;
+    }
+    nav ul.responsive {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    nav li a#nav-home {
+        display: block;
+    }
+    nav li.responsive {
+        /* float: none; */
+        display: block;
+        text-align: left;
+        border-bottom: 1px dotted #999;
+        padding-top: 10px;
+    }
+    nav li.responsive.nav-final {
+        border: none;
+    }
+    nav li.responsive a:hover {
+        border: none;
+        color: #8EC0A5;
+    }
+    nav .hamburger {
+        display: block;
+        float: right;
+    }
+    nav .hamburger.active {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        border: none;
+    }
 }
 
 header {
@@ -407,4 +456,10 @@ footer {
 
 footer p {
     font-size: .8rem;
+}
+
+#logo:hover,
+.text-accent:hover,
+.testimonial-text i:hover {
+    cursor: pointer;
 }

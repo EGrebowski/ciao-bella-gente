@@ -16,8 +16,11 @@
 <body>
     <nav role="navigation">
         <div class="nav-container">
-            <h6>Ciao Bella Gente!</h6>
+            <h6 id="logo">Ciao Bella Gente!</h6>
             <ul class="nav-buttons">
+                <li>
+                    <a hrev="#" id="nav-home">Home</a>
+                </li>
                 <li>
                     <a href="#" id="nav-about">About Leona</a>
                 </li>
@@ -27,8 +30,11 @@
                 <li>
                     <a href="#" id="nav-testimonials">Testimonials</a>
                 </li>
-                <li>
+                <li class="nav-final">
                     <a href="#" id="nav-contact">Contact</a>
+                </li>
+                <li class="hamburger active">
+                    <i class="fas fa-bars"></i>
                 </li>
             </ul>
         </div>
@@ -51,20 +57,18 @@
         <div class="section-container">
             <h3 class="section-title">About Leona</h3>
             <div class="text-container col-8">
-                <p>Having immigrated from Italy in 2010, Leona arrived in America as a young woman full of energy and the determination
-                    to blend into American culture. But anyone who meets Leona would instantly agree that she has wonderfully
-                    done so without compromising her unique traditional qualities. She’s fluent in 4 languages and spent
-                    the first stages of her career as a translator in both personal and business settings, but this hardly
-                    begins to capture her expertise. Leona’s students love their lessons, look forward to every session,
-                    and
-                    <span class="text-accent">reach their goals</span> - whether they be for communicating with family, preparing for travel, launching
-                    an international business, citizenship, or expressing love and romance (even wedding vows!) with the
-                    most passionate words.</p>
+                <p>Having grown up in Rome, Leona immigrated to the United States in 2010. Although fluent in four languages,
+                    Italian is her greatest love. She has experience working as a translator, and has been teaching Italian
+                    to eager students for more than seven years now. Leona’s students love their lessons, look forward to
+                    every session, and, most importantly,
+                    <span class="text-accent">reach their goals</span>—whether they be communicating with family, preparing for travel, launching an
+                    international business, working towards Italian citizenship, or expressing love (even wedding vows!)
+                    with the most passionate words.</p>
                 <br />
                 <p>
-                    <span class="text-accent">Read the testimonials</span> from her students, purely their words, and decide for yourself if they are
-                    expressing a gratitude that’s simply not common in language lessons. The feelings are mutual. Leona adores
-                    her students, now good friends one and all.</p>
+                    <span class="text-accent">Read the testimonials</span> from her students to see how they achieved their goals as they developed
+                    a lasting friendship and gained a passion for the Italian language.
+                </p>
             </div>
             <div class="image-wrapper col-4">
                 <img src="images/leona-2.JPG" alt="Leona at a cafe in Rome" />
@@ -78,12 +82,12 @@
             <div class="method col-6">
                 <h4 class="subtitle">Unique Lesson Style</h4>
                 <p>The key is flexibility, energy, and a comfortable environment. Leona meets her students in convenient locations
-                    that help them relax… coffee shops, bookstores, happy hours, and Skype when business and home obligations
-                    render a face-to-face difficult. Singles, couples, and group rates are available, weekday evenings and
-                    Saturday mornings. Lessons are highly conversational with an emphasis on proper grammar and recitation
-                    until pronunciation and inflection are correct. They read topical articles, talk about their days and
-                    families, and hear all about favorite Italian places and customs with tips for getting around town….
-                    in a mix of Italian and English that changes as students grow more confident.</p>
+                    that help them relax—coffee shops, bookstores, happy hours, and even Skype when a face-to-face is difficult.
+                    Singles, couples, and group rates are available, weekday evenings and Saturday mornings. Lessons are
+                    highly conversational with an emphasis on proper grammar and recitation until pronunciation and inflection
+                    are correct. Students read topical articles, talk about their days and families, and hear all about Italian
+                    places and customs with tips for getting around town…in a combination of Italian and English that changes
+                    as students grow more confident.</p>
             </div>
             <div class="Logistics col-6">
                 <h4 class="subtitle">Typical Costs</h4>
@@ -91,11 +95,11 @@
                     <li>
                         <span class="cost-label">Adults:</span> $35/hour</li>
                     <li>
-                        <span class="cost-label">Children:</span> $45/hour (yes, it's more difficult)</li>
+                        <span class="cost-label">Children:</span> $45/hour</li>
                     <li>
                         <span class="cost-label">Couples &#38 Groups:</span> Call and we'll figure something out</li>
-                    <li>
-                        <span class="cost-label">Travel:</span> free if in the S. Tampa area; premium fee for reasonable distance</li>
+                    <!-- <li>
+                        <span class="cost-label">Travel:</span> free if in the S. Tampa area; premium fee for reasonable distance</li> -->
                     <li>
                         <span class="cost-label">Workbook:</span> Approx. $15, order directly from Amazon</li>
                     <li>
@@ -103,8 +107,7 @@
                     <li>
                         <span class="cost-label">Cancellation Fee:</span> None, but please be respectful</li>
                     <li>
-                        <span class="cost-label">Homework:</span> Yes, but fun (i.e. watching Italian YouTube for songs and movies with subtitles).
-                        "I always tell them miracles don't happen with one hour a week."</li>
+                        <span class="cost-label">Homework:</span> Yes, but fun (i.e. watching Italian YouTube for songs and movies with subtitles).</li>
                 </ul>
             </div>
             <!--
@@ -325,7 +328,7 @@
         <div class="section-container">
             <h3 class="section-title">Contact Ciao Bella Gente!</h3>
             <div class="contact-info">
-                <p id="contact-today">Start working towards your Italian goals. Contact Leona today!</p>
+                <p id="contact-today">Start working toward your Italian goals. Contact Leona today!</p>
                 <br />
                 <p>
                     <i class="far fa-envelope"></i> sample.email@email.com</p>
