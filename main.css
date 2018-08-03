@@ -32,10 +32,12 @@ nav {
     top: 0;
     z-index: 1000;
     background-color: #D0E4FC;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .nav-container {
-    max-width: 1000px;
+    /* max-width: 1000px; */
     padding-top: 15px;
     padding-bottom: 15px;
     margin-left: auto;
@@ -88,23 +90,33 @@ nav li a:hover {
 }
 
 header {
-    /* margin-top: 55px; */
-}
-
-.header-image-container {
-    background: url(images/leona-7.jpg) no-repeat center left;
+    background: url("images/leona-7.jpg") no-repeat center left;
     background-size: cover;
     width: 100%;
     height: 500px;
+    margin-top: 55px;
     position: relative;
     color: #D0E4FC;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-top: 100px;
-    margin-right: auto;
-    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 4rem;
+    /* padding-top: 3rem; */
+    font-family: 'Bilbo Swash Caps', cursive;
+}
+
+header h2 {
+    font-size: 1.9rem;
+    font-weight: 100;
+}
+
+header p {
+    /* max-width: 60%; */
+    margin: 0 auto;
+    margin-top: 5rem;
+    font-size: 1.1rem;
 }
 
 .header-text {
@@ -115,30 +127,38 @@ header {
     background: rgba(0, 0, 0, 0.5);
     padding-top: 1rem;
     padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border: 2px solid #D0E4FC;
 }
 
-header h1 {
-    font-size: 4rem;
-    /* padding-top: 3rem; */
-    font-family: 'Bilbo Swash Caps', cursive;
-    margin-bottom: .6rem;
-}
-
-header h2 {
-    font-size: 1.9rem;
-    font-weight: 100;
-}
-
-header p {
-    max-width: 60%;
-    font-size: 1.1rem;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    text-align: center;
+.quote {
+    /* background: rgba(0, 0, 0, 0.5);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border: 2px solid #D0E4FC;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; */
+    /* position: absolute;
+    bottom: 20%;
+    right: 10%; */
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    border: 3px solid #8EC0A5;
-    padding: 1.5rem;
+    color: #D0E4FC;
+    /* padding: 3rem; */
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.quote-wrapper {
+    /* margin-top: 400px; */
+    background: #737B7E;
 }
 
 section {
@@ -162,6 +182,7 @@ section {
     height: auto;
 }
 
+.quote-wrapper:after,
 .section-container:after {
     content: "";
     clear: both;
