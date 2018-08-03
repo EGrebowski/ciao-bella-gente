@@ -41,43 +41,6 @@
     width: 100%
 }
 
-/*responsive navbar*/
-
-@media only screen and (max-width: 640px) {
-    nav li {
-        display: none;
-    }
-    nav ul.responsive {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-    nav li.responsive {
-        /* float: none; */
-        display: block;
-        text-align: left;
-        border-bottom: 1px dotted #999;
-        padding-top: 10px;
-    }
-    nav li.responsive.nav-final {
-        border: none;
-    }
-    nav li.responsive a:hover {
-        border: none;
-        color: #8EC0A5;
-    }
-    nav .hamburger {
-        display: block;
-        float: right;
-    }
-    nav .hamburger.active {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        border: none;
-    }
-}
-
 @media only screen and (min-width: 640px) {
     .col-1 {
         width: 8.33%;
