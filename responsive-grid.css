@@ -20,10 +20,10 @@
     clear: both;
 }
 
-
 /*mobile default*/
 
 .col-1,
+.col-1-7,
 .col-2,
 .col-3,
 .col-4,
@@ -49,21 +49,21 @@
         margin-left: auto;
         margin-right: auto;
     }
-
     nav ul {
         text-align: center;
     }
-
     .nav-buttons {
         width: 100%;
         margin: 0 auto;
     }
 }
 
-
 @media only screen and (min-width: 640px) {
     .col-1 {
         width: 8.33%;
+    }
+    .col-1-7 {
+        width: 14.25%;
     }
     .col-1-wide {
         width: 12.5%;

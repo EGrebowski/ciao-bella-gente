@@ -28,10 +28,30 @@ p {
 nav {
     position: fixed;
     width: 100%;
-    padding: 15px;
+    /* padding: 15px; */
     top: 0;
     z-index: 1000;
-    background-color: #91C6A5;
+    background-color: #D0E4FC;
+}
+
+.nav-container {
+    max-width: 1000px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-container:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+nav h6 {
+    font-size: 1.3rem;
+    font-family: 'Bilbo Swash Caps', cursive;
+    display: inline-block;
 }
 
 nav h4 {}
@@ -48,41 +68,60 @@ nav ul {
 
 nav li {
     display: inline-block;
-    padding-right: 15px;
-    padding-top: 10px;
-    font-size: 1rem;
+    padding-left: 15px;
+    /* padding-top: 10px; */
+    /* font-size: .9rem; */
 }
 
 nav li a {
     text-decoration: none;
-    color: #346577;
+    color: #3c3c3c;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bolder;
 }
 
 nav li a:hover {
     cursor: pointer;
-    border-bottom: 4px solid #FFDEBB;
+    border-bottom: 4px solid #8EC0A5;
     padding-bottom: 2px;
 }
 
 header {
-    background: url("images/leona-7.jpg") no-repeat center left;
+    /* margin-top: 55px; */
+}
+
+.header-image-container {
+    background: url(images/leona-7.jpg) no-repeat center left;
     background-size: cover;
     width: 100%;
     height: 500px;
-    margin-top: 55px;
     position: relative;
-    color: #FFDEBB;
+    color: #D0E4FC;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-top: 100px;
+    margin-right: auto;
+    margin-bottom: 3rem;
+}
+
+.header-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 header h1 {
     font-size: 4rem;
-    padding-top: 3rem;
+    /* padding-top: 3rem; */
     font-family: 'Bilbo Swash Caps', cursive;
+    margin-bottom: .6rem;
 }
 
 header h2 {
@@ -92,15 +131,21 @@ header h2 {
 
 header p {
     max-width: 60%;
-    margin: 0 auto;
-    margin-top: 5rem;
     font-size: 1.1rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #8EC0A5;
+    padding: 1.5rem;
 }
 
 section {
     display: block;
     clear: both;
     background-color: #FFFFFF;
+    color: #999;
     padding-top: 6rem;
     padding-bottom: 6rem;
     width: 100%;
@@ -110,7 +155,7 @@ section {
 }
 
 .section-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     clear: both;
     display: block;
@@ -126,17 +171,26 @@ section {
 .section-title {
     text-align: center;
     font-size: 1.5rem;
-    text-decoration: underline;
-    color: #BD614E;
-    padding-bottom: 2rem;
+    /* text-decoration: underline; */
+    color: #737B7E;
     font-family: 'Roboto', sans-serif;
+    /* border-bottom: 2px solid green; */
+    padding-bottom: 2rem;
 }
 
-#about p {
+#about {
     /*
     font-size: 1.1rem;
     text-align: justify;
 */
+    background-color: #f0f0f0;
+    color: #3c3c3c
+}
+
+#about .text-accent {
+    color: #8EC0A5;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .image-wrapper img {
@@ -144,13 +198,14 @@ section {
 }
 
 #italian-lessons {
-    background-color: #F4F3F5;
+    /* background-color: #F4F3F5; */
 }
 
 #italian-lessons .subtitle {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     margin-bottom: .5rem;
+    color: #3c3c3c;
 }
 
 #italian-lessons ul {
@@ -165,7 +220,7 @@ section {
 }
 
 #italian-lessons ul li span {
-    color: #63A97D;
+    color: #8EC0A5;
     font-weight: bold;
 }
 
@@ -176,11 +231,24 @@ img {
 #testimonials {
     padding-left: 2rem;
     padding-right: 2rem;
+    background-color: #f0f0f0;
 }
 
 #testimonials p {
+    font-size: .8rem;
     text-align: left;
     margin-top: .5rem;
+    color: #D0E4FC;
+}
+
+#testimonials .testimonials-dashboard:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#testimonials .testimonials-dashboard p {
+    color: #999;
 }
 
 #testimonials .story-thumbnail {
@@ -198,25 +266,76 @@ img {
     cursor: pointer;
 }
 
+#testimonials .testimonial-extended-wrapper {
+    padding-top: 4rem;
+}
+
 #testimonials .testimonial-extended {
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
     margin-bottom: 2rem;
-    background-color: #FFEDDA;
+    background-color: #737B7E;
     color: #346577;
-    padding: 30px;
+    /* padding: 30px; */
+    font-size: 0;
+}
+
+#testimonials .testimonial-extended .testimonial-image,
+#testimonials .testimonial-extended .testimonial-text {
+    display: inline-block;
+    width: 50%;
+}
+
+#testimonials .testimonial-extended .testimonial-image {
+    /* width: 50%; */
+}
+
+#testimonials .testimonial-extended .testimonial-text {
+    vertical-align: top;
 }
 
 #testimonials .testimonial-extended i {
     display: block;
     text-align: right;
-    padding-bottom: 1rem;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-right: 10px;
+    color: #D0E4FC;
 }
 
 #testimonials .testimonial-extended img {
-    width: 40%;
+    width: 100%;
     position: relative;
     float: left;
     margin-right: 1rem;
+}
+
+#testimonials .testimonial-extended p {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: .9rem;
+    /* text-align: justify; */
+    padding-top: 15px;
+    font-size: 1rem;
+}
+
+#testimonials #Kevin-full .testimonial-text p {
+    font-size: .9rem;
+}
+
+#testimonials #Jerry-full .testimonial-text p {
+    padding-top: 30%;
+}
+
+#testimonials #Jessica-full .testimonial-text p {
+    padding-top: 30%;
+}
+
+#testimonials #Mike-full .testimonial-text #mike-opener {
+    padding-top: 30%;
+}
+
+#testimonials #Ray-Monica-full .testimonial-text p {
+    font-size: .9rem;
 }
 
 /*
@@ -237,7 +356,7 @@ img {
 */
 
 #contact {
-    background-color: #F4F3F5;
+    /* background-color: #F4F3F5; */
 }
 
 #contact .contact-info {
@@ -249,15 +368,20 @@ img {
     margin-bottom: .5rem;
 }
 
+#contact .contact-info #contact-today {
+    color: #3c3c3c;
+}
+
 #contact i {
-    /*    display: block;*/
+    color: #63A97D;
 }
 
 footer {
     text-align: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #FFDEBB;
+    background-color: #737B7E;
+    color: #D0E4FC;
 }
 
 footer p {

@@ -42,13 +42,17 @@ $(document).ready(function (event) {
 });
 
 $('.story-thumbnail').on('click', 'p.read-more', function (event) {
+    $(".testimonial-extended").hide();
     var testimonialName = $(this).parent().attr('id');
     console.log(testimonialName);
     var testimonialFull = testimonialName + '-full';
     console.log(testimonialFull);
     $('#' + testimonialFull).show();
+    $('html, body').animate({
+        scrollTop: $(".testimonial-extended-wrapper").offset().top
+    });
 })
 
 $('.testimonial-extended').on('click', 'i', function (event) {
-    $(this).parent().hide();
+    $(this).parent().parent().hide();
 })
