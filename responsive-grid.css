@@ -198,6 +198,9 @@
     .story-thumbnail {
         height: 360px;
     }
+    .testimonial-extended {
+        display: inline-block;
+    }
     .testimonial-image {
         float: left;
         width: 50%;
