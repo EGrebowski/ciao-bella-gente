@@ -349,12 +349,6 @@ img {
     font-size: 0;
 }
 
-#testimonials .testimonial-extended .testimonial-image,
-#testimonials .testimonial-extended .testimonial-text {
-    display: inline-block;
-    width: 50%;
-}
-
 #testimonials .testimonial-extended .testimonial-image {
     /* width: 50%; */
 }
@@ -372,13 +366,6 @@ img {
     color: #D0E4FC;
 }
 
-#testimonials .testimonial-extended img {
-    width: 100%;
-    position: relative;
-    float: left;
-    margin-right: 1rem;
-}
-
 #testimonials .testimonial-extended p {
     padding-left: 15px;
     padding-right: 15px;
@@ -389,22 +376,6 @@ img {
 }
 
 #testimonials #Kevin-full .testimonial-text p {
-    font-size: .9rem;
-}
-
-#testimonials #Jerry-full .testimonial-text p {
-    padding-top: 30%;
-}
-
-#testimonials #Jessica-full .testimonial-text p {
-    padding-top: 30%;
-}
-
-#testimonials #Mike-full .testimonial-text #mike-opener {
-    padding-top: 30%;
-}
-
-#testimonials #Ray-Monica-full .testimonial-text p {
     font-size: .9rem;
 }
 

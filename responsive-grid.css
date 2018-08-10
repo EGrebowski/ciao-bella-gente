@@ -97,6 +97,29 @@
         padding-right: 0;
         font-size: 0;
     }
+    #testimonials .testimonial-extended .testimonial-image,
+    #testimonials .testimonial-extended .testimonial-text {
+        display: inline-block;
+        width: 50%;
+    }
+    #testimonials .testimonial-extended img {
+        width: 100%;
+        position: relative;
+        float: left;
+        margin-right: 1rem;
+    }
+    #testimonials #Jerry-full .testimonial-text p {
+        padding-top: 30%;
+    }
+    #testimonials #Jessica-full .testimonial-text p {
+        padding-top: 30%;
+    }
+    #testimonials #Mike-full .testimonial-text #mike-opener {
+        padding-top: 30%;
+    }
+    #testimonials #Ray-Monica-full .testimonial-text p {
+        font-size: .9rem;
+    }
 }
 
 /*tablet portrait*/
@@ -171,5 +194,40 @@
         padding-top: 3rem;
         padding-left: 15%;
         padding-right: 15%;
+    }
+    .story-thumbnail {
+        height: 303px;
+    }
+    .testimonial-image {
+        float: left;
+        width: 50%;
+        margin-right: .6rem;
+        margin-bottom: .6rem;
+    }
+    .testimonial-text {
+        width: 100%;
+        display: block;
+    }
+    #Kevin-full .testimonial-image,
+    #Kevin-full .testimonial-text {
+        width: 100%;
+    }
+    #Jerry-full .testimonial-image,
+    #Jerry-full .testimonial-text,
+    #Jessica-full .testimonial-image,
+    #Jessica-full .testimonial-text {
+        width: 50%;
+        display: inline-block;
+        margin: 0;
+        overflow: auto;
+    }
+    .testimonial-text {
+        padding-bottom: 2rem;
+        padding-top: 0;
+    }
+    .double {
+        width: 50%;
+        display: inline-block;
+        margin: 0;
     }
 }
