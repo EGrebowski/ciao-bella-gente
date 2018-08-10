@@ -124,7 +124,7 @@
 
 /*tablet portrait*/
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
     .col-1 {
         width: 8.33%;
     }
@@ -196,7 +196,7 @@
         padding-right: 15%;
     }
     .story-thumbnail {
-        height: 303px;
+        height: 360px;
     }
     .testimonial-image {
         float: left;
