@@ -22,7 +22,7 @@ body {
 
 p {
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 nav {
@@ -197,7 +197,7 @@ header p {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    color: #D0E4FC;
+    color: black;
     /* padding: 3rem; */
     text-align: center;
     font-size: 1.2rem;
@@ -274,7 +274,13 @@ section {
 #italian-lessons .subtitle {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    margin-bottom: .5rem;
+    margin-bottom: .8rem;
+    color: #737B7E;
+    font-size: 1.3rem;
+}
+
+#italian-lessons .method,
+#italian-lessons .logistics {
     color: #3c3c3c;
 }
 
@@ -282,7 +288,7 @@ section {
     padding-left: 4rem;
     text-align: left;
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 #italian-lessons ul li {
@@ -400,6 +406,11 @@ img {
     /* background-color: #F4F3F5; */
 }
 
+#contact .cursive {
+    font-family: 'Bilbo Swash Caps', cursive;
+    font-size: 1.8rem;
+}
+
 #contact .contact-info {
     max-width: 500px;
     margin: 0 auto;
@@ -411,6 +422,7 @@ img {
 
 #contact .contact-info #contact-today {
     color: #3c3c3c;
+    font-size: 1rem;
 }
 
 #contact i {
