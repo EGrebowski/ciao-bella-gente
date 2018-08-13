@@ -109,7 +109,7 @@
         margin-right: 1rem;
     }
     #testimonials #Jerry-full .testimonial-text p {
-        padding-top: 30%;
+        padding-top: 20%;
     }
     #testimonials #Jessica-full .testimonial-text p {
         padding-top: 30%;
@@ -215,8 +215,8 @@
     #Kevin-full .testimonial-text {
         width: 100%;
     }
-    #Jerry-full .testimonial-image,
-    #Jerry-full .testimonial-text,
+    /* #Jerry-full .testimonial-image,
+    #Jerry-full .testimonial-text, */
     #Jessica-full .testimonial-image,
     #Jessica-full .testimonial-text {
         width: 50%;
