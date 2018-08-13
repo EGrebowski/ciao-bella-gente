@@ -97,6 +97,15 @@
         padding-right: 0;
         font-size: 0;
     }
+    header h1 {
+        font-size: 4rem;
+    }
+    header h2 {
+        font-size: 1.9rem;
+    }
+    #italian-lessons ul {
+        padding-left: 4rem;
+    }
     #testimonials .testimonial-extended .testimonial-image,
     #testimonials .testimonial-extended .testimonial-text {
         display: inline-block;
@@ -180,6 +189,12 @@
         padding-right: 0;
         font-size: 0;
     }
+    header h1 {
+        font-size: 4rem;
+    }
+    header h2 {
+        font-size: 1.9rem;
+    }
     .section-container {
         padding-left: 2rem;
         padding-right: 2rem;
@@ -232,5 +247,78 @@
         width: 50%;
         display: inline-block;
         margin: 0;
+    }
+}
+
+/*mobile landscape*/
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    header h1 {
+        font-size: 4rem;
+    }
+    .col-1-7 {
+        width: 50%;
+    }
+    header h1 {
+        font-size: 4rem;
+    }
+    header h2 {
+        font-size: 1.9rem;
+    }
+    .section-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #about img {
+        margin-top: 1rem;
+        width: 80%;
+    }
+    #italian-lessons p {
+        margin-bottom: 3rem;
+    }
+    #italian-lessons ul {
+        padding-left: 1rem;
+    }
+    #testimonials .story-thumbnail {
+        height: 477px;
+    }
+    #testimonials .testimonial-extended p {
+        padding-bottom: 15px;
+    }
+}
+
+/*mobile default*/
+
+@media only screen and (max-width: 480px) {
+    header .header-text {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+    header h2 {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+    .section-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    p {
+        font-size: 1rem;
+    }
+    #about img {
+        margin-top: 1rem;
+        width: 80%;
+    }
+    #italian-lessons p {
+        margin-bottom: 3rem;
+    }
+    #italian-lessons ul {
+        padding-left: 1rem;
+    }
+    #testimonials .testimonial-extended p {
+        padding-bottom: 15px;
     }
 }
