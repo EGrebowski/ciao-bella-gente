@@ -215,9 +215,11 @@ section {
     padding-top: 6rem;
     padding-bottom: 6rem;
     width: 100%;
-    /*    font-family: 'Alegreya', serif;*/
-    /*    font-size: 1.1rem;*/
     text-align: justify;
+}
+
+#actNow {
+    padding: 0;
 }
 
 .section-container {
@@ -226,6 +228,30 @@ section {
     clear: both;
     display: block;
     height: auto;
+}
+
+.act-now-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#D0E4FC;
+    color: #3c3c3c;
+    font-weight: bold;
+    padding: 2rem 6rem;
+    gap: 2rem;
+}
+
+.enroll {
+    background-color: #8EC0A5;
+    color: #3c3c3c;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+}
+
+.enroll:hover {
+    font-size: 1.2rem;
 }
 
 .quote-wrapper:after,
