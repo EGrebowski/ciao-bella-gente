@@ -82,8 +82,24 @@ $('.story-thumbnail').on('click', 'p.read-more', function (event) {
     $('html, body').animate({
         scrollTop: $(".testimonial-extended-wrapper").offset().top
     });
-})
+});
 
 $('.testimonial-extended').on('click', 'i', function (event) {
     $(this).parent().parent().hide();
-})
+});
+
+// show and hide full program descriptions
+$(document).ready(function (event) {
+    $("#program-book-club").hide().removeClass("d-flex");
+});
+
+$('.ital-club').on('click', function (event) {
+    $("#program-book-club").hide().removeClass("d-flex");
+    $('#program-language-course').show().addClass("d-flex");
+});
+
+$('.book-club').on('click', function (event) {
+    console.log('book club clicked');
+    $("#program-language-course").hide().removeClass("d-flex");
+    $('#program-book-club').show().addClass("d-flex");
+});

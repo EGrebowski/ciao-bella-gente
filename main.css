@@ -223,7 +223,7 @@ section {
 }
 
 .section-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     clear: both;
     display: block;
@@ -475,3 +475,139 @@ footer p {
 .testimonial-text i:hover {
     cursor: pointer;
 }
+
+
+
+
+.card-img-top {
+    height: 200px; /* Standardized image height */
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.card-2 .card-body {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-2 .card-title {
+    height: 110px;
+}
+
+#programs .card-1 {
+    height: 150px;
+}
+
+#programs .card-body {
+    justify-content: center;
+}
+
+.card-1.ital-club {
+    background: url(images/learning.jpg) center / cover no-repeat;
+}
+.card-1.book-club {
+    background: url(images/book-club.jpg) center / cover no-repeat;
+}
+.card-1.travel-club {
+    background: url(images/travel.jpg) center / cover no-repeat;
+}
+.card-1.overseas-club {
+    background: url(images/apuglia.jpg) center / cover no-repeat;
+}
+.card-1.food-club {
+    background: url(images/italian-food.jpg) center / cover no-repeat;
+}
+.card-1.private-club {
+    background: url(images/leona-7.jpg) center / cover no-repeat;
+}
+
+#events {
+    font-size: 1rem;
+    color: #665c63;
+    color: black;
+    line-height: normal;
+}
+
+#events .section-title {
+    color: #4B5C51;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+#events .section-title {
+    border-bottom: 1px solid 
+}
+
+.event-detail {
+    font-family: roboto slab;
+}
+
+.event-detail h3 {
+    /* color: #4B5C51; */
+    font-weight: bold;
+}
+
+.event-detail p {
+    /* font-family: roboto slab; */
+    /* color: black; */
+}
+
+.card-1 {
+    /* padding: 1rem; */
+    flex: 1;
+    text-align: left;
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.card-header {
+    background-color: #4B5C51;
+    color: #ffffff;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    /* padding: 0 1rem; */
+    justify-content: center;
+    text-align: center;
+}
+
+.card-header .event-banner {
+    background-color: #ffffff;
+    color: #4B5C51;
+    width: 100%;
+}
+
+.card-body {
+    /* background: url(images/italian-food.jpg) center / cover no-repeat; */
+    height: 14rem;
+    color: #ffffff;
+}
+
+.card-body .body-container {
+    background-color: rgba(75, 92, 81, 0.8);
+}
+
+.card-body a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+/* .card-1 {
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: url(images/italian-food.jpg) center / cover no-repeat;
+}
+
+.card-1 .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.card-1 {
+    flex: 1;
+} */
