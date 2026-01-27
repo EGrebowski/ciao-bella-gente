@@ -139,10 +139,7 @@ nav li a#nav-home {
 }
 
 header {
-    background: url("images/leona-7.jpg") no-repeat center left;
-    background-size: cover;
     width: 100%;
-    height: 500px;
     margin-top: 55px;
     position: relative;
     color: #D0E4FC;
@@ -150,12 +147,289 @@ header {
     font-family: 'Roboto', sans-serif;
 }
 
+#heroCarousel {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+#heroCarousel .carousel-inner {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#heroCarousel .carousel-item {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Desktop: Portrait images side-by-side */
+.hero-portrait-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    align-items: stretch;
+    justify-items: stretch;
+    overflow: hidden;
+}
+
+.hero-portrait-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Desktop layouts */
+.desktop-portrait-group {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.desktop-landscape-slide {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile layouts - hidden by default, shown on mobile */
+.mobile-portrait-slide,
+.mobile-landscape-slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile-only slides - will be shown on mobile via media query */
+.mobile-only-slide {
+    /* Base state - will be overridden in mobile media query */
+}
+
+/* Desktop: Show desktop layouts, hide mobile */
+@media (min-width: 769px) {
+    .desktop-portrait-group,
+    .desktop-landscape-slide {
+        display: flex !important;
+    }
+    
+    .mobile-portrait-slide,
+    .mobile-landscape-slide {
+        display: none !important;
+    }
+    
+    .desktop-indicator {
+        display: inline-block;
+    }
+    
+    /* Hidden desktop indicators use visibility, not display, so Bootstrap can find them */
+    .desktop-indicator[style*="visibility: hidden"] {
+        visibility: hidden !important;
+        position: absolute !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    
+    .mobile-indicator {
+        display: none !important;
+    }
+    
+    /* Hide mobile-only slides completely on desktop */
+    .carousel-item.mobile-only-slide {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        left: -9999px !important;
+    }
+}
+
+/* Mobile: Show mobile layouts, hide desktop */
+@media (max-width: 768px) {
+    /* Allow Bootstrap to manage carousel item positioning - don't override with !important */
+    #heroCarousel .carousel-item {
+        /* Bootstrap handles display/positioning - we just ensure they're in DOM */
+    }
+    
+    /* Specifically ensure mobile-only-slide carousel items are accessible to Bootstrap */
+    #heroCarousel .carousel-item.mobile-only-slide {
+        /* Bootstrap handles display/positioning */
+    }
+    
+    /* Make sure mobile slide containers are visible and properly sized */
+    .mobile-portrait-slide,
+    .mobile-landscape-slide {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+    }
+    
+    /* Mobile-only-slide containers (when used as wrapper, not carousel-item) */
+    .mobile-only-slide:not(.carousel-item) {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Hide desktop content on mobile */
+    .desktop-portrait-group,
+    .desktop-landscape-slide {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Ensure images in mobile slides are visible */
+    .mobile-portrait-slide img,
+    .mobile-landscape-slide img,
+    .mobile-only-slide img {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Hide desktop images on mobile */
+    .desktop-portrait-group img,
+    .desktop-landscape-slide img {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Bootstrap handles carousel item positioning - don't interfere */
+    /* Ensure mobile content containers are properly sized */
+    #heroCarousel .carousel-item .mobile-portrait-slide,
+    #heroCarousel .carousel-item .mobile-landscape-slide {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .mobile-indicator {
+        display: inline-block;
+    }
+    
+    .desktop-indicator {
+        display: none !important;
+    }
+    
+    /* Hidden desktop indicators */
+    .desktop-indicator[style*="visibility: hidden"] {
+        display: none !important;
+    }
+    
+    /* Adjust carousel height for mobile */
+    #heroCarousel {
+        height: 400px;
+    }
+    
+    /* Adjust hero text size for mobile */
+    header h1 {
+        font-size: 2.5rem;
+        text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.8),
+            0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    header h2 {
+        font-size: 1.2rem;
+        text-shadow: 
+            1px 1px 3px rgba(0, 0, 0, 0.8),
+            0 0 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
+#heroCarousel .carousel-control-prev,
+#heroCarousel .carousel-control-next {
+    z-index: 11;
+}
+
+#heroCarousel .carousel-indicators {
+    z-index: 11;
+    margin-bottom: 1rem;
+}
+
+#heroCarousel .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+#heroCarousel .carousel-indicators button.active {
+    background-color: #D0E4FC;
+    border-color: #D0E4FC;
+}
+
+#heroCarousel .carousel-control-prev-icon,
+#heroCarousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-size: 60%;
+}
+
+#heroCarousel .carousel-control-prev-icon:hover,
+#heroCarousel .carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 header h1 {
     font-family: 'Bilbo Swash Caps', cursive;
+    margin: 0;
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
 }
 
 header h2 {
-    font-weight: 100;
+    font-weight: 600;
+    margin: 0;
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
 }
 
 header p {
@@ -170,12 +444,8 @@ header p {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border: 2px solid #D0E4FC;
+    z-index: 10;
+    pointer-events: none;
 }
 
 .quote {
