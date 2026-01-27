@@ -90,18 +90,67 @@ $('.testimonial-extended').on('click', 'i', function (event) {
 
 // show and hide full program descriptions
 $(document).ready(function (event) {
-    $("#program-book-club").hide().removeClass("d-flex");
+    $("#program-book-club, #program-travel-course, #program-overseas-immersion, #program-dinner-entertainment, #program-private-lessons").hide().removeClass("d-flex");
 });
 
 $('.ital-club').on('click', function (event) {
-    $("#program-book-club").hide().removeClass("d-flex");
+    $(".program-extended, .program-book-club").hide().removeClass("d-flex");
     $('#program-language-course').show().addClass("d-flex");
+    $('.card-1').removeClass('active');
+    $(this).addClass('active');
+    $('html, body').animate({
+        scrollTop: $("#program-language-course").offset().top - 100
+    });
 });
 
 $('.book-club').on('click', function (event) {
-    console.log('book club clicked');
-    $("#program-language-course").hide().removeClass("d-flex");
+    $(".program-extended, .program-book-club").hide().removeClass("d-flex");
     $('#program-book-club').show().addClass("d-flex");
+    $('.card-1').removeClass('active');
+    $(this).addClass('active');
+    $('html, body').animate({
+        scrollTop: $("#program-book-club").offset().top - 100
+    });
+});
+
+$('.travel-club').on('click', function (event) {
+    $(".program-extended, .program-book-club").hide().removeClass("d-flex");
+    $('#program-travel-course').show().addClass("d-flex");
+    $('.card-1').removeClass('active');
+    $(this).addClass('active');
+    $('html, body').animate({
+        scrollTop: $("#program-travel-course").offset().top - 100
+    });
+});
+
+$('.overseas-club').on('click', function (event) {
+    $(".program-extended, .program-book-club").hide().removeClass("d-flex");
+    $('#program-overseas-immersion').show().addClass("d-flex");
+    $('.card-1').removeClass('active');
+    $(this).addClass('active');
+    $('html, body').animate({
+        scrollTop: $("#program-overseas-immersion").offset().top - 100
+    });
+});
+
+$('.food-club').on('click', function (event) {
+    $(".program-extended, .program-book-club").hide().removeClass("d-flex");
+    $('#program-dinner-entertainment').show().addClass("d-flex");
+    $('.card-1').removeClass('active');
+    $(this).addClass('active');
+    $('html, body').animate({
+        scrollTop: $("#program-dinner-entertainment").offset().top - 100
+    });
+});
+
+$('.private-club').on('click', function (event) {
+    $(".program-extended, .program-book-club").hide().removeClass("d-flex");
+    $('#program-private-lessons').show().addClass("d-flex");
+    $('.card-1').removeClass('active');
+    $(this).addClass('active');
+    $('html, body').animate({
+        scrollTop: $("#program-private-lessons").offset().top - 100
+    });
 });
 
 // Global autoplay timer for desktop carousel
