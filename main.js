@@ -9,6 +9,15 @@ $('#logo, #nav-home').on('click', function (event) {
     $('nav li').removeClass('responsive');
 })
 
+// Programs
+$('#nav-programs').on('click', function (event) {
+    $('html, body').animate({
+        scrollTop: $("section#programs").offset().top
+    });
+    $('.nav-buttons').removeClass('responsive');
+    $('nav li').removeClass('responsive');
+})
+
 // About Leona
 $('#nav-about').on('click', function (event) {
     $('html, body').animate({
