@@ -210,9 +210,6 @@
         padding-left: 15%;
         padding-right: 15%;
     }
-    .story-thumbnail {
-        height: 360px;
-    }
     .testimonial-extended {
         display: inline-block;
     }
@@ -278,9 +275,6 @@
     }
     #italian-lessons ul {
         padding-left: 1rem;
-    }
-    #testimonials .story-thumbnail {
-        height: 477px;
     }
     #testimonials .testimonial-extended p {
         padding-bottom: 15px;
