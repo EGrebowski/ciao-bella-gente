@@ -163,12 +163,15 @@ function setupHeroCarousel() {
     var indicatorsContainer = $('#heroCarouselIndicators');
     
     // Only recreate if container is empty or structure changed
-    if (indicatorsContainer.children().length !== 5) {
+    // Desktop: 4 indicators, Mobile: 8 indicators
+    var expectedIndicators = isMobile ? 8 : 4;
+    if (indicatorsContainer.children().length !== expectedIndicators) {
         indicatorsContainer.empty();
         
-        // Create all 5 indicators (Bootstrap needs them all to exist in DOM)
-        // They must be in order: 0, 1, 2, 3, 4
-        for (var i = 0; i < 5; i++) {
+        // Create all indicators (Bootstrap needs them all to exist in DOM)
+        // Desktop: 8 total (but only show 4), Mobile: 8 total
+        var totalIndicators = 8;
+        for (var i = 0; i < totalIndicators; i++) {
             var button = $('<button>')
                 .attr('type', 'button')
                 .attr('data-bs-target', '#heroCarousel')
@@ -192,25 +195,25 @@ function setupHeroCarousel() {
         
         if (isMobile) {
             $btn.addClass('mobile-indicator');
-            $btn.css('display', ''); // Show all on mobile
+            $btn.css('display', ''); // Show all 8 on mobile
         } else {
             $btn.addClass('desktop-indicator');
-            // Hide indicators for slides 1 and 4 on desktop using visibility instead of display
-            // This keeps them in the DOM so Bootstrap can find them
-            if (index === 1 || index === 4) {
-                $btn.css({
-                    'visibility': 'hidden',
-                    'position': 'absolute',
-                    'opacity': '0',
-                    'pointer-events': 'none'
-                });
-            } else {
+            // Desktop: only show indicators for slides 0, 2, 3, 6 (hero-1-3 group, hero-4, hero-5-7 group, hero-8)
+            // Hide indicators for slides 1, 4, 5, 7 on desktop
+            if (index === 0 || index === 2 || index === 3 || index === 6) {
                 $btn.css({
                     'visibility': 'visible',
                     'position': 'static',
                     'opacity': '1',
                     'pointer-events': 'auto',
                     'display': ''
+                });
+            } else {
+                $btn.css({
+                    'visibility': 'hidden',
+                    'position': 'absolute',
+                    'opacity': '0',
+                    'pointer-events': 'none'
                 });
             }
         }
@@ -223,8 +226,19 @@ function handleCarouselNavigation() {
     var carouselElement = document.querySelector('#heroCarousel');
     
     if (!isMobile && carouselElement) {
-        // Desktop slides: 0 (grouped), 2 (hero-4), 3 (hero-5)
-        var desktopSlides = [0, 2, 3];
+        // Desktop slides: 0 (hero-1,2,3 grouped), 2 (hero-4), 3 (hero-5,6,7 grouped), 6 (hero-8)
+        var desktopSlides = [0, 2, 3, 6];
+        
+        // Helper function to get DOM index from data-slide value
+        function getDomIndexFromDataSlide(dataSlideValue) {
+            var $items = $('#heroCarousel .carousel-item');
+            for (var i = 0; i < $items.length; i++) {
+                if (parseInt($items.eq(i).attr('data-slide')) === dataSlideValue) {
+                    return i;
+                }
+            }
+            return -1;
+        }
         
         // Override prev/next buttons
         $('#heroCarousel .carousel-control-prev, #heroCarousel .carousel-control-next').off('click').on('click', function(e) {
@@ -237,11 +251,17 @@ function handleCarouselNavigation() {
             if (isNext) {
                 // Next: move to next desktop slide
                 var nextIndex = (currentIndex + 1) % desktopSlides.length;
-                carousel.to(desktopSlides[nextIndex]);
+                var domIndex = getDomIndexFromDataSlide(desktopSlides[nextIndex]);
+                if (domIndex !== -1) {
+                    carousel.to(domIndex);
+                }
             } else {
                 // Prev: move to previous desktop slide
                 var prevIndex = (currentIndex - 1 + desktopSlides.length) % desktopSlides.length;
-                carousel.to(desktopSlides[prevIndex]);
+                var domIndex = getDomIndexFromDataSlide(desktopSlides[prevIndex]);
+                if (domIndex !== -1) {
+                    carousel.to(domIndex);
+                }
             }
         });
         
@@ -252,7 +272,10 @@ function handleCarouselNavigation() {
             // Only allow navigation to desktop slides
             if (desktopSlides.indexOf(slideIndex) !== -1) {
                 var carousel = bootstrap.Carousel.getInstance(carouselElement);
-                carousel.to(slideIndex);
+                var domIndex = getDomIndexFromDataSlide(slideIndex);
+                if (domIndex !== -1) {
+                    carousel.to(domIndex);
+                }
             }
         });
     } else {
@@ -275,8 +298,8 @@ function updateIndicators(activeSlideIndex) {
                 $(this).addClass('active').attr('aria-current', 'true');
             }
         } else {
-            // Desktop: only update visible indicators (0, 2, 3)
-            var desktopSlides = [0, 2, 3];
+            // Desktop: only update visible indicators (0, 2, 3, 6)
+            var desktopSlides = [0, 2, 3, 6];
             var desktopIndex = desktopSlides.indexOf(activeSlideIndex);
             if (desktopIndex !== -1 && slideIndex === activeSlideIndex) {
                 $(this).addClass('active').attr('aria-current', 'true');
@@ -375,6 +398,17 @@ $(document).ready(function() {
             newCarousel = new bootstrap.Carousel(carouselElement, carouselOptions);
         }
         
+        // Helper function to get DOM index from data-slide value
+        function getDomIndexFromDataSlide(dataSlideValue) {
+            var $items = $('#heroCarousel .carousel-item');
+            for (var i = 0; i < $items.length; i++) {
+                if (parseInt($items.eq(i).attr('data-slide')) === dataSlideValue) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        
         // Custom autoplay for desktop (only cycles through desktop slides)
         function startDesktopAutoplay() {
             if (autoplayTimer) clearInterval(autoplayTimer);
@@ -384,10 +418,13 @@ $(document).ready(function() {
                     var carousel = bootstrap.Carousel.getInstance(carouselElement);
                     if (carousel) {
                         var currentSlide = parseInt($('#heroCarousel .carousel-item.active').attr('data-slide')) || 0;
-                        var desktopSlides = [0, 2, 3];
+                        var desktopSlides = [0, 2, 3, 6];
                         var currentIndex = desktopSlides.indexOf(currentSlide);
                         var nextIndex = (currentIndex + 1) % desktopSlides.length;
-                        carousel.to(desktopSlides[nextIndex]);
+                        var domIndex = getDomIndexFromDataSlide(desktopSlides[nextIndex]);
+                        if (domIndex !== -1) {
+                            carousel.to(domIndex);
+                        }
                     }
                 }, 5000);
             }
@@ -407,10 +444,10 @@ $(document).ready(function() {
             
             // Handle navigation on desktop - if we somehow ended up on a mobile-only slide, jump to next desktop slide
             if (!isMobile) {
-                var desktopSlides = [0, 2, 3];
+                var desktopSlides = [0, 2, 3, 6];
                 var currentIndex = desktopSlides.indexOf(currentSlide);
                 
-                // If we're on a mobile-only slide (1 or 4), jump to next desktop slide
+                // If we're on a mobile-only slide, jump to next desktop slide
                 if (currentIndex === -1) {
                     var nextIndex = 0;
                     for (var i = 0; i < desktopSlides.length; i++) {
@@ -422,7 +459,10 @@ $(document).ready(function() {
                     setTimeout(function() {
                         var carousel = bootstrap.Carousel.getInstance(carouselElement);
                         if (carousel) {
-                            carousel.to(desktopSlides[nextIndex]);
+                            var domIndex = getDomIndexFromDataSlide(desktopSlides[nextIndex]);
+                            if (domIndex !== -1) {
+                                carousel.to(domIndex);
+                            }
                         }
                     }, 50);
                 }
@@ -469,8 +509,8 @@ $(window).on('resize', function() {
                     var currentSlide = parseInt($('#heroCarousel .carousel-item.active').attr('data-slide')) || 0;
                     
                     if (!isMobile) {
-                        // Switching to desktop - ensure we're on a desktop slide (0, 2, or 3)
-                        var desktopSlides = [0, 2, 3];
+                        // Switching to desktop - ensure we're on a desktop slide (0, 2, 3, or 6)
+                        var desktopSlides = [0, 2, 3, 6];
                         if (desktopSlides.indexOf(currentSlide) === -1) {
                             // On a mobile-only slide, jump to first desktop slide
                             carousel.to(0);
@@ -481,13 +521,26 @@ $(window).on('resize', function() {
                 
                 // Start desktop autoplay if needed
                 if (!isMobile) {
-                    var desktopSlides = [0, 2, 3];
+                    var desktopSlides = [0, 2, 3, 6];
+                    // Helper function to get DOM index from data-slide value
+                    function getDomIndexFromDataSlide(dataSlideValue) {
+                        var $items = $('#heroCarousel .carousel-item');
+                        for (var i = 0; i < $items.length; i++) {
+                            if (parseInt($items.eq(i).attr('data-slide')) === dataSlideValue) {
+                                return i;
+                            }
+                        }
+                        return -1;
+                    }
                     autoplayTimer = setInterval(function() {
                         var currentSlide = parseInt($('#heroCarousel .carousel-item.active').attr('data-slide')) || 0;
                         var currentIndex = desktopSlides.indexOf(currentSlide);
                         if (currentIndex !== -1) {
                             var nextIndex = (currentIndex + 1) % desktopSlides.length;
-                            carousel.to(desktopSlides[nextIndex]);
+                            var domIndex = getDomIndexFromDataSlide(desktopSlides[nextIndex]);
+                            if (domIndex !== -1) {
+                                carousel.to(domIndex);
+                            }
                         }
                     }, 5000);
                 }

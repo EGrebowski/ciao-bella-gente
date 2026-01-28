@@ -233,9 +233,27 @@ header {
 
 /* Desktop: Show desktop layouts, hide mobile */
 @media (min-width: 769px) {
-    .desktop-portrait-group,
-    .desktop-landscape-slide {
+    .desktop-portrait-group {
         display: flex !important;
+        width: 100% !important;
+        height: 100% !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .desktop-landscape-slide {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .desktop-landscape-slide img,
+    .desktop-portrait-group img {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .mobile-portrait-slide,
